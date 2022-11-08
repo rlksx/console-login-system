@@ -6,17 +6,17 @@ namespace trabManseira
         public int Width { get; set; }
         public int Height { get; set; }
         public bool Header { get; set; }
-        public bool VerticalRow { get; set; }
+        public bool MiddleLine { get; set; }
 
-        public Canvas(int width, int height, bool header, bool verticalRow)
+        public Canvas(int width, int height, bool header, bool middleLine)
         {
             this.Width = width;
             this.Height = height;
             this.Header = header;
-            this.VerticalRow = verticalRow;
+            this.MiddleLine = middleLine;
         }
 
-        public void DrawCanvas()
+        public void drawCanvas()
         {
             // primeira linha
             Console.Write("+ ");
@@ -45,8 +45,25 @@ namespace trabManseira
             Console.Write(" +\n");
 
             if(Header == true) drawHeaderCanvas();
-            if(VerticalRow == true) drawVerticalRow();
-            
+            if(MiddleLine== true) drawMiddleLine();
+        }
+
+        public void drawHeaderCanvas()
+        {
+            // criando header
+            Console.SetCursorPosition(0, 5);
+
+            Console.Write("+ ");
+            for (int i = 0; i < Width; i++)
+                Console.Write("=");
+
+            Console.Write(" +");
+
+            // inserindo titulo no header
+            string text = "Titulo do Titulo";
+
+            Console.SetCursorPosition(Width/2 - text.Length/2, 3);
+            Console.Write(text);
         }
     }
 }
