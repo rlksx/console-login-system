@@ -1,5 +1,5 @@
 using System;
-namespace trabManseira
+namespace console_login_system
 {
     public class Canvas
     {
@@ -10,8 +10,6 @@ namespace trabManseira
 
         public Canvas(int width, int height, bool header, bool middleLine)
         {
-            Console.Clear();
-
             this.Width = width;
             this.Height = height;
             this.Header = header;
@@ -70,7 +68,7 @@ namespace trabManseira
         }
         public void drawMiddleLine()
         {
-            var linePosition = Width/2 - 8;
+            var linePosition = Width/2;
             
             for (var i = 1; i < Height; i++)
             {
