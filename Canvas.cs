@@ -10,6 +10,8 @@ namespace trabManseira
 
         public Canvas(int width, int height, bool header, bool middleLine)
         {
+            Console.Clear();
+
             this.Width = width;
             this.Height = height;
             this.Header = header;
@@ -25,6 +27,7 @@ namespace trabManseira
                 Console.Write("=");
             }
             Console.Write(" +\n");
+
             // meio
             for (int i = 0; i < Height; i++)
             {
@@ -64,6 +67,22 @@ namespace trabManseira
 
             Console.SetCursorPosition(Width/2 - text.Length/2, 3);
             Console.Write(text);
+        }
+        public void drawMiddleLine()
+        {
+            var linePosition = Width/2 - 8;
+            
+            for (var i = 1; i < Height; i++)
+            {
+                Console.SetCursorPosition(linePosition, i);
+                Console.Write("|\n");
+            }
+
+            Console.SetCursorPosition(linePosition, 1);
+            Console.Write("+");
+
+            Console.SetCursorPosition(linePosition, Height );
+            Console.Write("+");
         }
     }
 }
