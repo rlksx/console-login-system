@@ -49,7 +49,7 @@ namespace console_login_system
             if(MiddleLine== true) drawMiddleLine();
         }
 
-        public void drawHeaderCanvas()
+        private void drawHeaderCanvas()
         {
             // criando header
             Console.SetCursorPosition(0, 5);
@@ -66,9 +66,9 @@ namespace console_login_system
             Console.SetCursorPosition(Width/2 - text.Length/2, 3);
             Console.Write(text);
         }
-        public void drawMiddleLine()
+        private void drawMiddleLine()
         {
-            var linePosition = Width/2;
+            var linePosition = Width/2 + 10;
             
             for (var i = 1; i < Height; i++)
             {
