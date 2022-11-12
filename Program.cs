@@ -47,7 +47,7 @@ namespace console_login_system
                 Console.SetCursorPosition(currentWindowWidth/2 - $"Width = 100 Height = 100".Length/2, currentWindowHight/2 + 1);
                 Console.Write("Width = 130 Height = 33");
 
-                Thread.Sleep(99);
+                Thread.Sleep(100);
                 Console.Clear();
             }
         }
