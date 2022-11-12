@@ -1,5 +1,5 @@
 using console_login_system.ContentContext;
-namespace console_login_system.SignInContext
+namespace console_login_system
 {
     public class SignInAccount
     {

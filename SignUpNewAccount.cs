@@ -1,7 +1,6 @@
 
 using console_login_system.ContentContext;
-
-namespace console_login_system.SignUpContext
+namespace console_login_system
 {
     public class SignUpNewAccount
     {
