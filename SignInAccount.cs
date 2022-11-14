@@ -1,4 +1,6 @@
+using Microsoft.Data.SqlClient;
 using console_login_system.ContentContext;
+using Dapper;
 namespace console_login_system
 {
     public class SignInAccount
@@ -18,15 +20,32 @@ namespace console_login_system
         private void getData()
         {
             Console.SetCursorPosition(96,18);
-            string userName = Console.ReadLine().Trim();
+            string user = Console.ReadLine().Trim();
 
             Console.SetCursorPosition(96, 19);
             string userPassword = Console.ReadLine().Trim();
+
+            this.checkData(user, userPassword);
         }
 
-        private void checkData()
+        private void checkData(string user, string pwd)
         {
+            const string connectionString = "Server=localhost,1433;Database=ConsoleLoginData;User ID=sa;Password=1q2w3e4r@#$;Trusted_Connection=False; TrustServerCertificate=True;";
 
+            using(var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                var sql = @"
+                SELECT * FROM [Account] WHERE [User]=@user AND [Password]=@pwd";
+
+                var nsei = connection.Query(sql, new {user, pwd});
+
+                Console.Clear();
+                foreach(var item in nsei)
+                {
+                    Console.WriteLine(item);
+                }
+            }
         }
     }
 }

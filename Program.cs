@@ -19,7 +19,7 @@ namespace console_login_system
             switch(isSignIn)
             {
                 case true: signInAccount.start(); break;
-                case false: signUpNewAccount.start(); break;
+                case false: signUpNewAccount.start(); signInAccount.start(); break;
             }
             
             Console.ReadKey(); 
@@ -79,7 +79,7 @@ namespace console_login_system
                 Console.Write("Needed for run the project:");
 
                 Console.SetCursorPosition(currentWindowWidth/2 - $"Width = 100 Height = 100".Length/2, currentWindowHight/2 + 1);
-                Console.Write("Width = 130 Height = 33");
+                Console.Write("Width = 130 Height = 34");
 
                 Thread.Sleep(60);
                 Console.Clear();
