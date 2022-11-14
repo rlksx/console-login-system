@@ -1,6 +1,8 @@
 using Microsoft.Data.SqlClient;
 using console_login_system.ContentContext;
 using Dapper;
+using System.Collections;
+
 namespace console_login_system
 {
     public class SignInAccount
@@ -11,7 +13,7 @@ namespace console_login_system
             var canvas = new Canvas(126, 31, false, true);
             canvas.drawCanvas();
 
-            var content = new Content(true);
+            var index = new IndexContent(true);
             var earth = new Earth();
 
             this.getData();
@@ -38,14 +40,35 @@ namespace console_login_system
                 var sql = @"
                 SELECT * FROM [Account] WHERE [User]=@user AND [Password]=@pwd";
 
-                var nsei = connection.Query(sql, new {user, pwd});
+                var nsei = connection.Query(sql, new {user, pwd}).FirstOrDefault();
 
-                Console.Clear();
-                foreach(var item in nsei)
-                {
-                    Console.WriteLine(item);
-                }
+                if(nsei == null) this.problemInChecking();
+
+                var content = new Content(nsei.Id);
             }
+        }
+
+        private void problemInChecking()
+        {
+            int windowHight = Console.WindowHeight;
+            int windowWidth = Console.WindowWidth;
+            
+            Console.Clear();
+
+            Console.SetCursorPosition(windowWidth/2 - 23, windowHight/2 - 2);
+            Console.Write(@" _________________________________________");
+
+            Console.SetCursorPosition(windowWidth/2 - 23, windowHight/2 - 1);
+            Console.Write(@"/                                         \");
+
+            Console.SetCursorPosition(windowWidth/2 - 23, windowHight/2);
+            Console.Write(@"|          There was a problem:           |");
+
+            Console.SetCursorPosition(windowWidth/2 - 23, windowHight/2 + 1);
+            Console.Write(@"|   your password or user is incorret!    |");
+
+            Console.SetCursorPosition(windowWidth/2 - 23, windowHight/2 + 2);
+            Console.Write(@"\_________________________________________/");
         }
     }
 }

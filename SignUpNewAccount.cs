@@ -12,7 +12,7 @@ namespace console_login_system
             var canvas = new Canvas(126, 31, false, true);
             canvas.drawCanvas();
             
-            var content = new Content(false);
+            var content = new IndexContent(false);
             var earth = new Earth();
 
             this.getData();
