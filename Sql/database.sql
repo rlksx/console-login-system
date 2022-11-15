@@ -1,0 +1,12 @@
+CREATE DATABASE [ConsoleLoginData]
+
+USE [ConsoleLoginData]
+CREATE TABLE [Account] (
+    [Id] UNIQUEIDENTIFIER NOT NULL,
+    [User] NVARCHAR(110) NOT NULL,
+    [Email] NVARCHAR(180) NOT NULL,
+    [Password] NVARCHAR(140) NOT NULL,
+
+    CONSTRAINT [PK_Account] PRIMARY KEY([Id])
+)
+GO
