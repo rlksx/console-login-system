@@ -61,7 +61,7 @@ namespace console_login_system
             Console.Write(" +");
 
             // inserindo titulo no header
-            string text = "Titulo do Titulo";
+            string text = "Bem - Vindo";
 
             Console.SetCursorPosition(Width/2 - text.Length/2, 3);
             Console.Write(text);
