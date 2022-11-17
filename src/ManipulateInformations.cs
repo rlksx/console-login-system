@@ -1,7 +1,7 @@
 using System.Collections;
 using Dapper;
 using Microsoft.Data.SqlClient;
-namespace console_login_system
+namespace console_login_system.src
 {
   class ManipulateInformation
   {

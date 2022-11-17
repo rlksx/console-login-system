@@ -1,9 +1,8 @@
 using Microsoft.Data.SqlClient;
-using console_login_system.ContentContext;
 using Dapper;
 using System.Collections;
 
-namespace console_login_system
+namespace console_login_system.src
 {
     public class SignInAccount
     {

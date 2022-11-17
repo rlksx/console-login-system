@@ -1,5 +1,5 @@
 using System;
-namespace console_login_system
+namespace console_login_system.src
 {
     public class Canvas
     {

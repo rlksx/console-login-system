@@ -1,4 +1,4 @@
-namespace console_login_system.ContentContext
+namespace console_login_system.src
 {
     public class IndexContent
     {

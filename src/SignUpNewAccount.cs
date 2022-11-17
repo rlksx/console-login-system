@@ -1,8 +1,7 @@
-
-using console_login_system.ContentContext;
 using Microsoft.Data.SqlClient;
+using console_login_system.src.Models;
 using Dapper;
-namespace console_login_system
+namespace console_login_system.src
 {
     public class SignUpNewAccount
     {
